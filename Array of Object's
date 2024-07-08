@@ -1,0 +1,31 @@
+//Array of Object's
+#include <iostream>
+using namespace std;
+
+class employe{
+  char name[30];
+  int empid;
+  public:
+  void getdata(){
+      cout<<"Enter name: ";
+      cin>>name;
+      cout<<"Enter EmpId: ";
+      cin>>empid;
+  }
+  
+  void putdata(){
+      cout<<"\nName "<<name;
+      cout<<"\nEmpId "<<empid;
+  }
+};
+
+int main(){
+    employe e[3];
+    for(int i=0 ; i < 3 ; i++){
+        e[i].getdata();
+    }
+    for(int i=0 ; i < 3 ; i++){
+        e[i].putdata();
+    }
+    return 0;
+}
