@@ -1,0 +1,41 @@
+//Objects as fn arguments
+
+#include <iostream>
+using namespace std;
+
+class Time{
+    int hours,minutes;
+    public:
+        void getdata(int h,int m){
+            hours = h;
+            minutes = m;
+        }
+        
+        void putdata(){
+            cout<<hours<<"hours and ";
+            cout<<minutes<<"minutes \n";
+        }
+        
+        void sum(Time , Time);
+};
+
+void Time :: sum(Time t1 , Time t2){
+    minutes = t1.minutes+t2.minutes;
+    hours = minutes/60;
+    minutes = minutes %60;
+    hours = hours + t1.hours + t2.hours;
+};
+
+int main(){
+    Time T1,T2,T3;
+    T1.getdata(2,40);
+    T2.getdata(3,40);
+    T3.sum(T1,T2);
+    cout<<"T1 = ";
+    T1.putdata();
+    cout<<"T2 = ";
+    T2.putdata();
+    cout<<"T3 = ";
+    T3.putdata();
+    return 0;
+}
